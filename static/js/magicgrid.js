@@ -1,4 +1,4 @@
-'use strict';
+   'use strict';
 
 /**
  * @author emmanuelolaojo
@@ -11,7 +11,7 @@
  * @param config - configuration object
  */
 var checkParams = function (config) {
-  var DEFAULT_GUTTER = 25;
+  var DEFAULT_GUTTER = 12;
   var booleanProps = ["useTransform", "center"];
 
 
