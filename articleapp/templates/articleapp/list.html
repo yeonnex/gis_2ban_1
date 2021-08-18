@@ -27,11 +27,11 @@
 
     <div class="container my-4">
 
-        {% for article in article_list %}
+        {% for project in project_list %}
 
             <div>
-                <a href="{% url 'articleapp:detail' pk=article.pk %}">
-                    <img src="{{ article.image.url }}" alt="">
+                <a href="{% url 'projectapp:detail' pk=project.pk %}">
+                    <img src="{{ project.image.url }}" alt="">
                 </a>
             </div>
 
@@ -44,13 +44,9 @@
     {% include 'snippets/pagination.html' %}
 
     <div class="text-center my-5">
-        <a href="{% url 'articleapp:create' %}"
-           class="btn btn-dark rounded-pill material-icons">
-            brush
-        </a>
-        <a href="{% url 'articleapp:create' %}"
+        <a href="{% url 'projectapp:create' %}"
            class="btn btn-outline-dark rounded-pill px-5">
-            Create Article
+            Create Project
         </a>
     </div>
 
