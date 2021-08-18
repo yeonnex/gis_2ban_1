@@ -27,11 +27,11 @@
 
     <div class="container my-4">
 
-        {% for project in project_list %}
+        {% for article in article_list %}
 
             <div>
-                <a href="{% url 'projectapp:detail' pk=project.pk %}">
-                    <img src="{{ project.image.url }}" alt="">
+                <a href="{% url 'projectapp:detail' pk=article.pk %}">
+                    <img src="{{ article.image.url }}" alt="">
                 </a>
             </div>
 
@@ -46,7 +46,7 @@
     <div class="text-center my-5">
         <a href="{% url 'projectapp:create' %}"
            class="btn btn-outline-dark rounded-pill px-5">
-            Create Project
+            Create Article
         </a>
     </div>
 
