@@ -30,7 +30,7 @@
         {% for article in article_list %}
 
             <div>
-                <a href="{% url 'projectapp:detail' pk=article.pk %}">
+                <a href="{% url 'articleapp:detail' pk=article.pk %}">
                     <img src="{{ article.image.url }}" alt="">
                 </a>
             </div>
