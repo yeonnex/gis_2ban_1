@@ -4,18 +4,20 @@
 {% block content %}
 
     <style>
-    .container{
-        padding: 0;
-        margin: 0 auto;
-    }
+        .container {
+            padding: 0;
+            margin: 0 auto;
+        }
+
         .container div {
           width: 45%;
-        max-width:200px;
+            max-width: 200px;
           display: flex;
           justify-content: center;
           align-items: center;
           border-radius: 1rem;
-
+            flex-direction: column;
+            box-shadow: 0 0 1rem gray;
         }
 
         .container img {
@@ -33,6 +35,7 @@
                 <a href="{% url 'articleapp:detail' pk=article.pk %}">
                     <img src="{{ article.image.url }}" alt="">
                 </a>
+                <span class="my-2 NNS_B">{{ article.title }}</span>
             </div>
 
         {% endfor %}
@@ -45,7 +48,7 @@
 
     <div class="text-center my-5">
         <a href="{% url 'articleapp:create' %}"
-        class="btn btn-dark rounded-pill material-icons">
+           class="btn btn-dark rounded-pill material-icons">
             brush
         </a>
         <a href="{% url 'articleapp:create' %}"
@@ -56,7 +59,3 @@
 
 
 {% endblock %}
-
-
-
-
