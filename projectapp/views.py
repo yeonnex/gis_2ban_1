@@ -10,7 +10,7 @@ from django.views.generic.list import MultipleObjectMixin
 from articleapp.models import Article
 from projectapp.forms import ProjectCreationForm
 from projectapp.models import Project
-from subscibeapp.models import Subscription
+from subscribeapp.models import Subscription
 
 
 @method_decorator(login_required, 'get')
@@ -45,7 +45,6 @@ class ProjectDetailView(DetailView, MultipleObjectMixin):
         return super().get_context_data(object_list=article_list,
                                         subscription=subscription,
                                         **kwargs)
-
 
 class ProjectListView(ListView):
     model = Project
