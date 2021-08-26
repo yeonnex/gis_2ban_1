@@ -8,12 +8,9 @@ def decorator(func):
     return decorated
 
 
-@decorator
-def hello_world(input_text):
-    print(input_text)
 
 
-hello_world('Hello World!')
+
 
 print('\n\n-------------------\n1번째 실습\n-------------------\n\n')
 

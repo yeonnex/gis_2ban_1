@@ -16,22 +16,6 @@ from accountapp.models import HelloWorld
 from articleapp.models import Article
 
 
-@login_required
-def hello_world(request):
-    if request.method == "POST":
-
-        temp = request.POST.get('input')
-
-        new_data = HelloWorld()
-        new_data.text = temp
-        new_data.save()
-
-        return HttpResponseRedirect(reverse('accountapp:hello_world'))
-
-    else:
-        data_list = HelloWorld.objects.all()
-        return render(request, 'accountapp/hello_world.html',
-                      context={'data_list': data_list})
 
 
 class AccountCreateView(CreateView):
@@ -75,7 +59,7 @@ class AccountUpdateView(UpdateView):
 class AccountDeleteView(DeleteView):
     model = User
     context_object_name = 'target_user'
-    success_url = reverse_lazy('accountapp:hello_world')
+    success_url = reverse_lazy('accountapp:list')
     template_name = 'accountapp/delete.html'
 
 
