@@ -16,8 +16,6 @@ from accountapp.models import HelloWorld
 from articleapp.models import Article
 
 
-
-
 class AccountCreateView(CreateView):
     model = User
     form_class = UserCreationForm
@@ -36,7 +34,8 @@ class AccountDetailView(DetailView, MultipleObjectMixin):
 
     def get_context_data(self, **kwargs):
         article_list = Article.objects.filter(writer=self.object)
-        return super().get_context_data(object_list=article_list, **kwargs)
+        return super().get_context_data(object_list=article_list,
+                                        **kwargs)
 
 
 has_ownership = [login_required, account_ownership_required]
@@ -59,11 +58,5 @@ class AccountUpdateView(UpdateView):
 class AccountDeleteView(DeleteView):
     model = User
     context_object_name = 'target_user'
-    success_url = reverse_lazy('accountapp:list')
+    success_url = reverse_lazy('articleapp:list')
     template_name = 'accountapp/delete.html'
-
-
-
-
-
-
