@@ -84,3 +84,5 @@ __pycache__/
 media/
 
 staticfiles/
+
+gis_2ban.pem

@@ -82,3 +82,7 @@ a {
 a:hover {
     color:black;
 }
+
+blockquote{
+    background-color: #cccccc;
+}
