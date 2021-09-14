@@ -5,7 +5,10 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 from django.urls import reverse_lazy
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+
+# 이 부분이 base.py 파일이랑 중복으로 들어가있네요
+# BASE_DIR = Path(__file__).resolve().parent.parent
+
 env_list = dict()
 
 local_emv = open(os.path.join(BASE_DIR, '.env'))
