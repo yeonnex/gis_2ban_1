@@ -17,6 +17,8 @@ services:
       - gis_2ban_network
     secrets:
       - DJANGO_SECRET_KEY
+      - MARIADB_USER
+      - MARIADB_PASSWORD
     volumes:
     - gis_2ban_media:/home/gis_2ban_1/media/
     - gis_2ban_static:/home/gis_2ban_1/staticfiles/
@@ -25,6 +27,10 @@ services:
     image: mariadb:10.5
     networks:
       - gis_2ban_network
+    secrets:
+      - MARIADB_USER
+      - MARIADB_PASSWORD
+      - MARIADB_ROOT_PASSWORD
     volumes:
     - gis_mariadb:/var/lib/mysql
     environment:
@@ -43,5 +49,13 @@ volumes:
 
 secrets:
   DJANGO_SECRET_KEY:
+    external: true
+  MARIADB_USER:
+    external: true
+
+  MARIADB_PASSWORD:
+    external: true
+
+  MARIADB_ROOT_PASSWORD:
     external: true
 
