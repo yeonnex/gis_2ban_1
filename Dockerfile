@@ -2,13 +2,13 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
-RUN echo 'alskdmglka'
+RUN echo 'alskdSDFEWFmglka'
 
 RUN git clone https://github.com/yeonnex/gis_2ban_1.git
 
 WORKDIR /home/gis_2ban_1/
 
-RUN echo "SECRET_KEY=FSJEO8F3JKF" > .env
+
 
 RUN pip install -r requirements.txt
 
