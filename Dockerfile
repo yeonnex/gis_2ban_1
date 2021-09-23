@@ -2,7 +2,7 @@ FROM python:3.9.0
 
 WORKDIR /home/
 
-RUN echo 'dfsfe'
+RUN echo 'alskdmglka'
 
 RUN git clone https://github.com/yeonnex/gis_2ban_1.git
 
@@ -15,12 +15,6 @@ RUN pip install -r requirements.txt
 RUN pip install mysqlclient
 
 RUN pip install gunicorn
-
-RUN python manage.py migrate
-
-RUN python manage.py collectstatic --noinput --settings=gis_2ban_1.settings.deploy
-
-RUN python manage.py migrate --settings=gis_2ban_1.settings.deploy
 
 EXPOSE 8000
 

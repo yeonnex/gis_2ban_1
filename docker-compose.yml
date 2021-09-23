@@ -12,12 +12,26 @@ services:
     - 80:80
 
   django:
-    image: gis_2ban_django:3
+    image: gis_2ban_django:4
     networks:
       - gis_2ban_network
+    secrets:
+      - DJANGO_SECRET_KEY
     volumes:
     - gis_2ban_media:/home/gis_2ban_1/media/
     - gis_2ban_static:/home/gis_2ban_1/staticfiles/
+
+  mariadb:
+    image: mariadb:10.5
+    networks:
+      - gis_2ban_network
+    volumes:
+    - gis_mariadb:/var/lib/mysql
+    environment:
+      MARIADB_DATABASE: django
+      MARIADB_USER: django
+      MARIADB_PASSWORD: password1234
+      MARIADB_ROOT_PASSWORD: password1234
 
 networks:
   gis_2ban_network:
@@ -25,3 +39,9 @@ networks:
 volumes:
   gis_2ban_media:
   gis_2ban_static:
+  gis_mariadb:
+
+secrets:
+  DJANGO_SECRET_KEY:
+    external: true
+
