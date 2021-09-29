@@ -22,7 +22,7 @@ services:
     volumes:
     - gis_2ban_media:/home/gis_2ban_1/media/
     - gis_2ban_static:/home/gis_2ban_1/staticfiles/
-
+    - gis_log:/var/log/nginx/
   mariadb:
     image: mariadb:10.5
     networks:
@@ -46,6 +46,7 @@ volumes:
   gis_2ban_media:
   gis_2ban_static:
   gis_mariadb:
+  gis_log:
 
 secrets:
   DJANGO_SECRET_KEY:
