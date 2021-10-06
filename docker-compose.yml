@@ -14,6 +14,8 @@ services:
       protocol: tcp
       target: 80
       published: 80
+    secrets:
+      - NGINX_PASSWORD
 
   goaccess:
     image: allinurl/goaccess:1.5.1
@@ -71,3 +73,5 @@ secrets:
   MARIADB_ROOT_PASSWORD:
     external: true
 
+  NGINX_PASSWORD:
+    external: true
