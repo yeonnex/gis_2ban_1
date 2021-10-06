@@ -12,6 +12,14 @@ services:
     ports:
     - 80:80
 
+  goaccess:
+    image: allinurl/goaccess:1.5.1
+    volumes:
+      - gis_log:/var/log/nginx/
+    ports:
+      - 7890:7890
+    command: /var/log/nginx/gis_access.log -o /var/log/nginx/report.html --log-format=COMBINED --real-time-html
+
   django:
     image: gis_2ban_django:5
     networks:
